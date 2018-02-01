@@ -5,6 +5,7 @@ This is a simple program to illustrate how to use pagination in flask SQL-Alchem
 - Clone the repository
 - Browse the directory
 - Read and understand the app.py file.
+- Set the path to the SQLite db on line 5.
 - Open the terminal and run the application
 	 $ python pagination.py
 - Click the link in the terminal to view the application running in the browser.
