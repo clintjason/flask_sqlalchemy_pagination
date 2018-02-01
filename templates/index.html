@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INDEX</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap-theme.min.css')}}">
+</head>
+<body>
+
+	<div class="container">
+		
+	{% for thread in threads.items %}
+		<div class="alert alert primary" role="alert">
+			{{thread.title}}
+		</div>
+	{% endfor %}
+
+	{% for page in threads.iter_pages(left_edge=3, right_edge=3, left_current=3, right_current=3) %}
+		{% if page %}
+			<a href="{{ url_for('thread',page_num=page) }}">{{page}}</a>
+		{% else %}
+			...
+		{% endif %}
+	{% endfor %}
+
+	</div>
+
+<script src="{{url_for('static', filename='js/lib/jquery.js')}}"></script>
+<script src="{{url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+</body>
+</html>
